@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[slovene]{babel}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Kratka doma\v ca vaja iz \LaTeX-a}
+\author{\v Ziga Pata\v cko Koderman}
+\date{\today}
+
+\maketitle
+\section{Besedilo}
+{\bf Navldilo:}
+\begin{enumerate}
+	\item v  Latex  prepi\v site  vsebino  \underline{celotnega}
+dokumenta. Pazite na to\v cko 3c. Sklicujemo se tudi na \v clanek \cite{clanek} in ena\v cbo \ref{eq:1} v poglavju \ref{sec:izrazi}. Vsa sklicevanja naj bodo v izvorni kodi dejansko sklicevanja (\verb_\ref{}_ in \verb_\cite{}_).
+	\item V naslovu ne pozabite mojega imena zamenjati s svojim.
+	\item V enem samem emailu boste poslali:
+	\begin{enumerate}
+		\item PDF datoteko, generirano iz va\v se izvorne Latex kode
+		\item tekstovno datoteko z vaˇso izvorno Latex kodo, ki se lepo prevede
+		\item ime obeh datotek naj bo:  latex\_Priimek\_Ime.*
+	\end{enumerate}
+\end{enumerate}
+
+\section{Matemati\v cni izrazi}\label{sec:izrazi}
+Prvi izraz:
+\begin{equation}\label{eq:1}
+F_{\rho n} = \frac{1}{2} \int \!\!\!\! \int dz\ {\rm d}^2 r_\bot \Bigg[ B \bigg( \frac{\delta \rho}{\rho_0} \bigg)^2 + B'\bigg( \frac{ |\nabla \delta \rho| }{\rho_0} \bigg)^2 + K_1(\nabla_\bot \cdot \delta  \boldsymbol{{\rm n}})^2 + K_3 |\partial_z \delta \boldsymbol{{\rm n}}|^2 \Bigg]
+\end{equation}
+Drugi izraz:
+$$
+S^t (\boldsymbol{{\rm q}}) = k_B T \rho_0 \frac
+{(3 s_0 q_z q_\bot)^2 + (K_1 q^2_\bot + K_3q^2_z) / \tilde{H}}
+{\tilde{B} (3 s_0 q_z q_\bot)^2 + \bigg\{ \tilde{B} / \tilde{H} + \big[ (s_0 + \frac{1}{2})q_z^2 + \frac{1}{2}(1-s_0)q_\bot^2 \big]^2 \bigg\} (K_1q_\bot^2 + K_3q_z^2) } .
+$$
+
+\begin{thebibliography}{99}
+	\bibitem{clanek} A. Avtor, B. Bvtor, Rev. Neki. Phys. {\bf 42}, 685 (2015).
+\end{thebibliography}
+
+\end{document}
