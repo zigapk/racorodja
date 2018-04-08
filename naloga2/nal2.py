@@ -5,8 +5,8 @@ import numpy as np
 
 def draw(points, save_file_name=None):
     # separate inner and outer points
-    inner = [i for i in points if (i[0]**2 + i[1]**2)**0.5 < 1]
-    outer = [i for i in points if (i[0]**2 + i[1]**2)**0.5 >= 1]
+    inner = np.array([i for i in points if (i[0]**2 + i[1]**2)**0.5 < 1])
+    outer = np.array([i for i in points if (i[0]**2 + i[1]**2)**0.5 >= 1])
 
     # circle
     circle = lambda t: [np.cos(t), np.sin(t)]
@@ -17,13 +17,13 @@ def draw(points, save_file_name=None):
     fig.suptitle('Naključne točke iz enotkskega kvadrata znotraj enotskega kroga')
     left, bottom, width, height = [0.15, 0.15, 0.7, 0.7]
     ax = fig.add_axes([left, bottom, width, height])
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
+    ax.set_xlabel('$x_i$')
+    ax.set_ylabel('$y_i$')
 
     # plot series
     ax.plot(x, y, 'k', linewidth=1.0)
-    ax.scatter([i[0] for i in inner], [i[1] for i in inner], s=1, color='r')
-    ax.scatter([i[0] for i in outer], [i[1] for i in outer], s=1)
+    ax.scatter(inner[:,0], inner[:,1], s=1, color='r')
+    ax.scatter(outer[:,0], outer[:,1], s=1)
 
     # legend
     plt.legend(handles=[
