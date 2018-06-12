@@ -1,0 +1,110 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{lift-and-drag-of-apollo-command-module}{online}{}
+    \name{author}{1}{}{%
+      {{hash=CEDN}{%
+         family={Charles E.\bibnamedelima DeRose},
+         familyi={C\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
+  D\bibinitperiod},
+         given={NASA},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CEDN1}
+    \strng{fullhash}{CEDN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Trim Attitude, Lift and Drag of the Apollo Command Module
+  With Offset Center-of-Gravity positions at Mach Numbers to 29}
+    \verb{url}
+    \verb https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19690020179.pdf
+    \endverb
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{earths-atmosphere}{online}{}
+    \name{author}{1}{}{%
+      {{hash=EWTF}{%
+         family={Encyclopedia},
+         familyi={E\bibinitperiod},
+         given={Wikipedia The\bibnamedelima Free},
+         giveni={W\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim
+  F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EWTF1}
+    \strng{fullhash}{EWTF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{title}{Atmosphere of Earth}
+    \verb{url}
+    \verb https://en.wikipedia.org/wiki/Atmosphere_of_Earth
+    \endverb
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{command-module-overview}{online}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={NASA},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{CSM06 Command Module Overview}
+    \verb{url}
+    \verb https://www.hq.nasa.gov/alsj/CSM06_Command_Module_Overview_pp39-52.pd
+    \verb f
+    \endverb
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{entry-aerodynamics}{online}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={NASA},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Entry Aerodynamics at Lunar Return Conditions Obtained from
+  the Flight of Apollo 4 (AS-501)}
+    \verb{url}
+    \verb http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.694.73&rep=r
+    \verb ep1&type=pdf
+    \endverb
+    \field{urlyear}{2018}
+  \endentry
+\enddatalist
+\endinput

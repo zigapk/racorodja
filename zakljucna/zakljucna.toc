@@ -1,0 +1,20 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {slovene}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Uvod}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Fizikalno ozadje}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Sile}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Ena\v cbe gibanja in koordinatni sistem}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Simulacija}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Primer povratka Apollo kapsule}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Rezultati}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Zaklju\v cek}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Literatura}{11}
