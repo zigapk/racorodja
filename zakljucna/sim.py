@@ -73,6 +73,9 @@ class Sim:
         # prepare t linear space
         self.t = np.linspace(0, t, t)
 
+    def set_v0(self, v):
+        self.capsule['v0'] = v
+
     def g(self, h):
         return self.planet['g0'] * (self.planet['r'] / (self.planet['r'] + h)) ** 2
 

@@ -11,8 +11,9 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{xparse}
-
 \usepackage[backend=bibtex]{biblatex}
+\usepackage{subfloat}
+\usepackage{subfig}
 
 % code styling
 \lstset{language=Python,keywordstyle={\bfseries \color{blue}}}
@@ -37,9 +38,11 @@
 
 \section{Uvod}
 
-Povratek kapsule iz vesolja neki neki neki
+Pri povratku kapsule iz vesolja mora ta drasti\v cno upo\v casniti. Veliko ve\v cino svoje kineti\v cne energije se znebi z pomo\v cjo Zemljine atmosfere in jo s svojim toplotnim \v s\v citom pretvori v toploto. Ko se kapsula primerno upo\v casni odpre padala za ne\v znej\v si pristanek.
 
-To poro\v cilo posku\v sa oceniti kot, pod katerim moramo pri... jebes, nemorem zdele tega napisat.
+V tem poro\v cilu posku\v samo dolo\v citi optimalen kot za vstop v atmosfero. Pri prestrmem vstopu v atmosfero kapsula zgori, astronavte pa ubije \v ze prevelik pospe\v sek. Premajhen kot vstopa pa lahko vodi v odboj kapsule od Zemljine atmosfere.
+
+Natan\v cneje se poro\v cilo posve\v ca kotu, pod katerim so v Zemljino atmosfero morale vstopati kapsule Apollo pri povratku z Lune.
 
 \pagebreak
 
@@ -122,10 +125,10 @@ Absolutni pospe\v sek sestavljata vertikalna komponenta $g$ ter sila upora:
 	\dot{v} = g*sin(\gamma) - \rho(h) v^2 k_u.
 \end{equation}
 Odvod kota $\gamma$ pa izpeljemo. V pozitivno smer nanj vpljiva gravitacijski pospe\v sek z velikostjo $g\frac{cos(\gamma)}{v}$. V negativno smer na kot $\gamma$ vpljiva premik zaradi vztrajnostnega momenta. Velikost tega \v clena je odvisna od krivinskega radija planeta in se glasi $ -v \frac{cos(\gamma)}{r}$.\\ \\
-Za upo\v stevanje sile vzgona pa potrebujemo manjka !!!\textsl{}! \\\\
+Za upo\v stevanje sile vzgona pa potrebujemo razmerje med vzgonom in uporom (ang. \textit{lift-to-drag ratio}). \\\\
 Sprememba kota $\gamma$ se torej glasi
 \begin{equation}
-	\dot{\gamma} = g\frac{cos(\gamma)}{v}  - v \frac{cos(\gamma)}{r} - \alpha v k*rho(h)
+	\dot{\gamma} = g\frac{cos(\gamma)}{v}  - v \frac{cos(\gamma)}{r} - \alpha v k*\rho(h)
 \end{equation}
 kjer je $\alpha$ razmerje med silo vzgona in silo upora kapsule.\\
 
@@ -212,11 +215,110 @@ Potrebijemo tudi podatke o Zemlji in njeni atmosferi:
 \clearpage
 
 \subsection{Rezultati}
-tuki dam notr vs tabeli (kot, max a, max p, visina odprja padala, bool a je biu uspesn pristanek) za z vzgonom in brez. pol preberem vn keri koti so primerni, pokomentiram vse te v povezavi z pravimi koti apola in tega da uresnici oni z aerodinamiko spreminjajo l/d da bol tocno pristajajo. pokomentiram tut zakaj je vzgon zjebe use skupi (nevem?).
+Simulacijo za razli\v cne kote po\v zenemo z in brez upo\v stevanja sile vzgona. Med skrajnima kotoma, ki \v se vodita v uspe\v sen povratek na Zemljo, izpi\v semo \v se nekaj vmesnih vstopnih kotov ter pripadajo\v cih skrajnih vrednosti:
 
+
+\begin{table}[H]
+	\centering
+	\caption{Skrajne vrednosti pri povratku pri razli\v cnih za\v cetnih kotih brez upo\v stevanja sile vzgona}
+	\vspace{0.3cm}
+	\def\arraystretch{1.5}
+	\begin{tabular}{l|lll}
+	$ \phi_0\ [^\circ] $ & $a_{max}\ [g]$ & $ P_{max} \ [kW] $ \\
+	\hline
+	$ 4.55 $ & $ 8.60 $ & $ 354.73 $ \\
+	$ 4.75 $ & $ 6.53 $ & $ 475.41 $ \\
+	$ 4.95 $ & $ 7.74 $ & $ 645.25 $ \\
+	$ 5.12 $ & $ 9.96 $ & $ 789.47 $
+	\end{tabular}
+	\def\arraystretch{1}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\caption{Skrajne vrednosti pri povratku pri razli\v cnih za\v cetnih kotih z upo\v stevanja sile vzgona}
+	\vspace{0.3cm}
+	\def\arraystretch{1.5}
+	\begin{tabular}{l|lll}
+	$ \phi_0\ [^\circ] $ & $a_{max}\ [g]$ & $ P_{max} \ [kW] $ \\
+	\hline
+	$ 5.51 $ & $ 6.55 $ & $ 622.10 $ \\
+	$ 5.71 $ & $ 7.69 $ & $ 721.20 $ \\
+	$ 5.91 $ & $ 8.88 $ & $ 820.69 $ \\
+	$ 6.09 $ & $ 9.97 $ & $ 911.50 $
+	\end{tabular}
+	\def\arraystretch{1}
+\end{table}
+
+Opazimo, da se pri upo\v stevanju sile vzgona vstopni kot spremeni za priblji\v zno $ 1^\circ $, sama \v sirina intervala pa se ne spremeni bistveno.
+
+
+Idealni kot za povratek v atmosfero z upo\v stevanjem sile vzgona je torej priblji\v zno $ 5.8^\circ $. Tako se v atmosfero ne zaletimo prestrmo, hkrati pa ne tvegamo preve\v c, da bi ze zarad napake odbili od atmosfere. Graf vi\v sine v odvisnosti od prepotovane razdalje pri tem za\v cetnem kotu ka\v ze, da se kapsula rahlo odbije, pa potem hitro spet vrne v re\v zim padanja.
+
+\begin{figure}[H]
+  \begin{center}
+  	\includegraphics[width=12cm]{5_8_height_over_x.pdf}
+    \caption{Graf vi\v sine v odvisnosti od prepotovane razdalje za vstopni kot $ 5.8^\circ $}
+  \end{center}
+\end{figure}
+
+Tako odboj kot sam vstopni kot se ne razlikujeta pretirano od resni\v cnih podatkov za povratek kapsule Apollo 4 \cite{entry-aerodynamics}. Ta se je vrnila z vstopnim kotom $ 6.9^\circ $ in prav tako pristala \v sele po kraj\v sem odboju.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=12cm]{apollo4_return_trajectory.png}
+		\caption{Graf vi\v sine v odvisnosti od prepotovane razdalje pri povratku kapsule Apollo 4}
+	\end{center}
+\end{figure}
+
+Primerljivi sta tudi razdalji, ki jih kapsuli prepotujeta pred pristankom. Apollo 4 prepotuje priblji\v zno $ 4800\ km $ ($ 2600 $ navti\v cnih milj), kapsula iz na\v se simulacije pa priblji\v zno $ 4900\ km $.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=12cm]{5_8_scheme.pdf}
+		\caption{Skica povratka kapsule v atmosfero pri vstopnem kotu $ 5.8^\circ $}
+	\end{center}
+\end{figure}
+
+Razliko med izra\v cunanim in pravim vstopnim kotom bi najverjetneje lahko pojasnili z nenatan\v cnostjo na\v sega modela. Model uporablja zelo grobo aproksimacijo za lastnosti atmosfere v odvisnosti od vi\v sine ter temperature. Veliko negotovost vna\v sata tudi koeficient sile upora in razmerje med silama vzgona ter upora. Ta dva se z temperaturo zraka, vi\v sino ter hitostjo gotovo spreminjata, model pa predpostavlja, da sta konstantna.
+
+V simulaciji smo privzeli, da je kapsula samo objekt, ki pada nazaj v atmosfero. Pri resni\v cnem povratku pa kapsule niso brez vpljiva na svojo pot. Z majhnimi raketnimi motorji spreminjajo svoj naklon ter s tem vpljivajo na razmerje med silama vzgona in upora. Tako lahko popravijo manj\v se napake pri vstopnem kotu ter prakti\v cno neodvisno od vetra pristanejo v radiju nekaj kilometrov od \v zeljenega pristajali\v sca. To po\v cnejo vse dandanes lete\v ce kapsule, poseben primer tovrstnega manevriranja pa je raketoplan, ki spada \v ze v re\v zim letenja \cite{raketoplan-wiki}.
+
+\subsection{Vstopni kot v odvisnosti od za\v cetne hitrosti}
+
+Minimalen in maksimalen vstopni kot se glede na za\v cetno histrost mo\v cno spreminja. Iz grafa je razvidno, da se Apollo kapsule vra\v cajo v atmosfero pri hitrostih, kjer je interval \v sirok priblji\v zno $ 1^\circ $. \v Sirina intervala sprejemljivih vstopnih kotov se s pove\v cevanjem vstopne hitrosti drasti\v cno o\v za, pri histrostih ve\v cjih od $ 11800\ m/s $ pa kapsule ni mogo\v ce ve\v c pristati brez predhodnega zaustavljanja.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=12cm]{range_of_velocity.pdf}
+		\caption{Minimalen in maksimalen vstopni kot v odvisnosti od za\v cetne hitrosti}
+	\end{center}
+\end{figure}
 \clearpage
+
+\subsection{Odboj od atmosfere}
+
+Pri premajhnih vstopnih kotih se kapsula navadno od atmosfere odbije in poleti globoko v vesolje. V posebnih primerih se kapsula tudi po odboju vrne in s primernim kotom ponovno vstopi v atmosfero. Tak primer dveh odbojev je naprimer kot $ \phi_0 = 4.13^\circ $.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=12cm]{4_13_scheme.pdf}
+		\caption{Primer dvojnega odvoja od atmosfere}
+	\end{center}
+\end{figure}
+
+Tako odbijanje od atmosfere pa je, \v ceprav bi morda ustrezalo na\v sim kriterijem za maksimalno mo\v c in pospe\v sek, zelo nevarno. Astronavti so dlje \v casa v vesolju, potujejo po nekontrolirani in nena\v crtovani poti ter ne morejo vpljivati na kot ponovnega vstopa.
+\clearpage
+
 \section{Zaklju\v cek}
-zabauno, kako bi izbolsou tole simulacijo (jebiga, nevem), pa da bi probu se na drugih planetih
+Varen povratek kapsule iz vesolja je eden najve\v cjih problemov poletov astronavtov v vesolje. Zaradi nere\v senega problema zaustavitve kapsule je Jurij Gagarin, prvi \v clovek v vesolju, iz kapsule moral sko\v citi s padalom z vi\v sine $ 7\ km $ \cite{vostok-1-wiki}. Ta problem so kasneje re\v sili, \v se dandanes pa povratek ostaja eden najnevarnej\v sih delov poletov v vesolje.
+
+V tej projektni nalogi smo uspe\v sno zasnovali grobo simulacijo tovrstnega povratka ter izra\v cunali primerne vstopne kote. Te le rahlo odstopajo od pravih podatkov za kapsulo Apollo 4.
+
+Simulacijo bi lahko nadgradili z natan\v cnej\v sim aerodinami\v cnim modelom kapsule in atmosfere. Velik dodatek bi bil zasnova sistema za vodenje kapsule pri ponovnem vstopu in \v cimnatan\v cnejsem pristajanju. Simulacijo pa za zabavo lahko uporabimo tudi na drugih planetih.
+
 %\vspace{1cm}
 
 %\begin{figure}
