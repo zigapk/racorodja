@@ -14,6 +14,7 @@
 \usepackage[backend=bibtex]{biblatex}
 \usepackage{subfloat}
 \usepackage{subfig}
+\usepackage[title]{appendix}
 
 % code styling
 \lstset{language=Python,keywordstyle={\bfseries \color{blue}}}
@@ -38,7 +39,7 @@
 
 \section{Uvod}
 
-Pri povratku kapsule iz vesolja mora ta drasti\v cno upo\v casniti. Veliko ve\v cino svoje kineti\v cne energije se znebi z pomo\v cjo Zemljine atmosfere in jo s svojim toplotnim \v s\v citom pretvori v toploto. Ko se kapsula primerno upo\v casni odpre padala za ne\v znej\v si pristanek.
+Pri povratku kapsule iz vesolja mora ta drasti\v cno upo\v casniti. Veliko ve\v cino svoje kineti\v cne energije se znebi z pomo\v cjo Zemljine atmosfere in jo s svojim toplotnim \v s\v citom pretvori v toploto. Ko se kapsula primerno upo\v casni, odpre padala za ne\v znej\v si pristanek.
 
 V tem poro\v cilu posku\v samo dolo\v citi optimalen kot za vstop v atmosfero. Pri prestrmem vstopu v atmosfero kapsula zgori, astronavte pa ubije \v ze prevelik pospe\v sek. Premajhen kot vstopa pa lahko vodi v odboj kapsule od Zemljine atmosfere.
 
@@ -139,7 +140,7 @@ Te \v stiri ena\v cbe zadostujejo za simulacijo leta kapsule. Za la\v zje risanj
 \newpage
 
 \section{Simulacija}
-Spremenljivke v simulaciji so torej $\{x, h, v, \beta, \phi \}$, potek gibanja kapsule pa je odvisen od njihovih za\v cetnih vrednosti $x_0 = 0$, $h_0$, $v_0$ ter $\beta_0 = 0$. Nas pa posebaj zanima za\v cetni kot $\phi_0$, ki nam pove, s kak\v snim za\v cetnim kotom se zaletimo v atmosfero.
+Spremenljivke v simulaciji so torej $\{x, h, v, \gamma, \phi \}$, potek gibanja kapsule pa je odvisen od njihovih za\v cetnih vrednosti $x_0 = 0$, $h_0$, $v_0$ ter $\phi_0 = 0$. Nas pa posebaj zanima za\v cetni kot $\gamma_0$, ki nam pove, s kak\v snim za\v cetnim kotom se zaletimo v atmosfero.
 
 Od tega je odvisno s kak\v snim pospe\v skom nas bo atmosfera zaustavljala in ali se bomo morebiti odbili nazaj v vesolje. Kriteriji za uspe\v sen povratek bodo:
 \begin{itemize}
@@ -300,11 +301,11 @@ Minimalen in maksimalen vstopni kot se glede na za\v cetno histrost mo\v cno spr
 
 \subsection{Odboj od atmosfere}
 
-Pri premajhnih vstopnih kotih se kapsula navadno od atmosfere odbije in poleti globoko v vesolje. V posebnih primerih se kapsula tudi po odboju vrne in s primernim kotom ponovno vstopi v atmosfero. Tak primer dveh odbojev je naprimer kot $ \phi_0 = 4.13^\circ $.
+Pri premajhnih vstopnih kotih se kapsula navadno od atmosfere odbije in poleti globoko v vesolje. V posebnih primerih se kapsula tudi po odboju vrne in s primernim kotom ponovno vstopi v atmosfero. Tak primer dveh odbojev je naprimer kot $ \phi_0 = 4.15^\circ $.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=12cm]{4_13_scheme.pdf}
+		\includegraphics[width=12cm]{4_15_scheme.pdf}
 		\caption{Primer dvojnega odvoja od atmosfere}
 	\end{center}
 \end{figure}
@@ -338,6 +339,12 @@ Simulacijo bi lahko nadgradili z natan\v cnej\v sim aerodinami\v cnim modelom ka
 \vspace{2cm}
 
 
+\clearpage
+
+\begin{appendices}
+	\section{Izvorna koda}
+	Izvorna koda programa za simuliranje ponovnega vstopa v atmosfero, uporabljena v tem poro\v cilu, je na voljo na spletnem portalu GitHub \cite{github-source-code}.
+\end{appendices}
 \clearpage
 \section{Literatura}
 \printbibliography[heading=none]

@@ -86,7 +86,7 @@ realistic_range = get_angle_range(realistic, step=0.01)
 # print(range_to_tex_table(realistic_range, realistic, step=0.2))
 
 # draw scheme
-realistic.draw_scheme(4.15, 'all', save_to_file='4.15_scheme.pdf')
+realistic.draw_scheme(4.15, 'planet', save_to_file='4_15_scheme.pdf')
 # realistic.plot_height_over_time(5.8, save_to_file='5_8_height.pdf')
 # realistic.plot_height_over_x(5.8, save_to_file='5_8_height_over_x.pdf')
 # realistic.plot_velocity_over_time(5.8, save_to_file='5_8_velocity.pdf')
